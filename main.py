@@ -31,7 +31,7 @@ def login():
             return "Invalid credentials. Please try again."
     return render_template('login.html')
 
-@app.route('/all_features_deployed', methods=['GET'])
+@app.route('/api/all_features_deployed', methods=['GET'])
 def all_features_deployed():
     if all(features.values()):
         return jsonify({'status': 'success'})
