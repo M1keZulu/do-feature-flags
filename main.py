@@ -40,6 +40,8 @@ def admin_panel():
         for feature in features:
             if feature in request.form:
                 features[feature] = True
+            else:
+                features[feature] = False
     return render_template('admin_panel.html', features=features)
 
 @app.route('/logout')
