@@ -10,12 +10,10 @@
     <h1>Admin Panel</h1>
     <form method="post" action="/admin_panel">
         <h2>Toggle Features</h2>
-        <label for="feature1">Feature 1:</label>
-        <input type="checkbox" id="feature1" name="feature1" {% if features['feature1'] %} checked {% endif %}><br><br>
-        <label for="feature2">Feature 2:</label>
-        <input type="checkbox" id="feature2" name="feature2" {% if features['feature2'] %} checked {% endif %}><br><br>
-        <label for="feature3">Feature 3:</label>
-        <input type="checkbox" id="feature3" name="feature3" {% if features['feature3'] %} checked {% endif %}><br><br>
+        {% for feature, status in features.items() %}
+            <label for="{{ feature }}">{{ feature }}:</label>
+            <input type="checkbox" id="{{ feature }}" name="{{ feature }}" {% if status %} checked {% endif %}><br><br>
+        {% endfor %}
         <input type="submit" value="Save">
     </form>
 </body>
