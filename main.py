@@ -31,6 +31,13 @@ def login():
             return "Invalid credentials. Please try again."
     return render_template('login.html')
 
+@app.route('/all_features_deployed', methods=['GET'])
+def all_features_deployed():
+    if all(features.values()):
+        return jsonify({'status': 'success'})
+    else:
+        return jsonify({'status': 'failure'})
+
 @app.route('/admin_panel', methods=['GET', 'POST'])
 def admin_panel():
     if not session.get('logged_in'):
@@ -54,4 +61,4 @@ def get_features_status():
     return jsonify(features)
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=80)
+    app.run(host='0.0.0.0', port=8000)
