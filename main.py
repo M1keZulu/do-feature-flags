@@ -5,6 +5,7 @@ app = Flask(__name__)
 app.secret_key = 'testing_secret_key'
 CORS(app, resources={r"/*": {"origins": "*"}}, supports_credentials=True)
 
+
 features = {
     'addition': False,
     'multiplication': False,
