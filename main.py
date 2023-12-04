@@ -39,7 +39,7 @@ def admin_panel():
     if request.method == 'POST':
         for feature in features:
             if feature in request.form:
-                features[feature] = not features[feature]
+                features[feature] = True
     return render_template('admin_panel.html', features=features)
 
 @app.route('/logout')

@@ -12,7 +12,7 @@
         <h2>Toggle Features</h2>
         {% for feature, status in features.items() %}
             <label for="{{ feature }}">{{ feature }}:</label>
-            <input type="checkbox" id="{{ feature }}" name="{{ feature }}" {% if status %} checked {% endif %}><br><br>
+            <input type="checkbox" id="{{ feature }}" name="{{ feature }}" {% if status %}checked{% endif %}><br><br>
         {% endfor %}
         <input type="submit" value="Save">
     </form>
